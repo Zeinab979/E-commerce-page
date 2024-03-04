@@ -1,16 +1,21 @@
-/* Add your styles here */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-/* General styles */
 .container {
     width: 90%;
     margin: 0 auto;
 }
 
-/* Header styles */
 header {
-    background: #333;
+    background-color: #333;
     color: #fff;
     padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
 }
 
 nav ul {
@@ -19,14 +24,12 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin-left: 20px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
-/* Hamburger menu styles */
 .burger {
     display: none;
-    flex-direction: column;
     cursor: pointer;
 }
 
@@ -36,20 +39,52 @@ nav ul li {
     width: 25px;
     height: 3px;
     background-color: #fff;
-    margin: 5px;
+    margin: 5px 0;
 }
 
-/* Product showcase styles (to be implemented) */
+.product-showcase {
+    padding: 50px 0;
+}
 
-/* Search section styles */
+.slider {
+    display: flex;
+    overflow-x: auto;
+}
+
+.product {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product p {
+    margin-top: 10px;
+}
+
 .search {
-    background: #f4f4f4;
+    background-color: #f4f4f4;
     padding: 20px 0;
+    text-align: center;
 }
 
-/* Footer styles */
+#searchInput {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
 footer {
-    background: #333;
+    background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -60,7 +95,7 @@ footer ul {
 }
 
 footer ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 

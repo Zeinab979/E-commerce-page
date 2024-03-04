@@ -1,15 +1,40 @@
-// Toggle responsive navigation menu
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-});
+const products = [
+    { name: "Product 1", price: 50, image: "product1.jpg" },
+    { name: "Product 2", price: 60, image: "product2.jpg" },
+    { name: "Product 3", price: 70, image: "product3.jpg" },
+    { name: "Product 4", price: 80, image: "product4.jpg" },
+    { name: "Product 5", price: 90, image: "product5.jpg" }
+];
 
-// Dummy search function (replace with actual search functionality)
 function searchProducts() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    // Perform search based on input (to be implemented)
-    console.log('Searching for:', input);
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm)
+    );
+    displayProducts(filteredProducts);
 }
+
+function displayProducts(products) {
+    const slider = document.getElementById("productSlider");
+    slider.innerHTML = "";
+
+    products.forEach(product => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+
+        const productImg = document.createElement("img");
+        productImg.src = product.image;
+        productImg.alt = product.name;
+
+        const productName = document.createElement("p");
+        productName.textContent = product.name;
+
+        productDiv.appendChild(productImg);
+        productDiv.appendChild(productName);
+
+        slider.appendChild(productDiv);
+    });
+}
+
+displayProducts(products);
